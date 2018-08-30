@@ -19,12 +19,15 @@ if __name__ == '__main__':
 
     # 判断操作系统
     osInfo = platform.system()
-    if osInfo == 'Windows':
+    if (osInfo == 'Windows'):
         screen_width, screen_height = 480, 852
-    elif osInfo == 'Darwin':
+        print ('---Windows---')
+    elif (osInfo == 'Darwin'):
         screen_width, screen_height = 280, 552
-    elif osInfo == 'Linux':
+        print ('---macOS---')
+    elif (osInfo == 'Linux'):
         screen_width, screen_height = 480, 852
+        print ('---Linux---')
     else:
         print 'Please check OS info.'
 
