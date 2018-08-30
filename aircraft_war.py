@@ -7,6 +7,7 @@ import pygame
 import sys
 import time
 import random
+import platform
 from pygame.locals import *
 # import platform
 # platform.architecture()
@@ -15,8 +16,19 @@ from pygame.locals import *
 if __name__ == '__main__':
     # 初始化 pygame
     pygame.init()
+
+    # 判断操作系统
+    osInfo = platform.system()
+    if osInfo == 'Windows':
+        screen_width, screen_height = 480, 852
+    elif osInfo == 'Darwin':
+        screen_width, screen_height = 280, 552
+    elif osInfo == 'Linux':
+        screen_width, screen_height = 480, 852
+    else:
+        print 'Please check OS info.'
+
     # 创建游戏窗口
-    screen_width, screen_height = 480, 852
     screen = pygame.display.set_mode((screen_width, screen_height), 0, 32)
     pygame.display.set_caption('飞机大战')
 
